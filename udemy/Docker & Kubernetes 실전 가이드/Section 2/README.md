@@ -41,6 +41,7 @@ docker run -it node
 ## Pre-Built
 
 ## Custom Images
+Dockerfile 을 이용하여 이미지를 만들고, 만들어진 이미지로 컨테이너를 만들어야 한다.
 ```Dockerfile
 # FROM <이미지 이름>
 FROM node
@@ -60,10 +61,31 @@ COPY . ./
 RUN npm install
 
 # 컨테이너가 시작될 때 로컬 시스템에 특정 포트를 노출
+# 컨테이너에서 해당 포트(80번)을 외부로 개방한 것이라 연거라 docker run -p 3000:80 <image name> 으로 80번 포트랑 로컬 머신의 포트(3000)을 매핑시켜야 한다.
+# EXPOSE 80을 제거해도 된다.
+# -p 는 publish 
+# 3000:
 EXPOSE 80
 
 # 이미지가 실행될 때 실행되지 않고, 이미지를 기반으로 생성된 컨테이너가 시작될때 실행된다. RUN 명령어와 구문이 다르다. 
 CMD ["node", "sever.js"]
+```
+
+커스텀 이미지를 빌드할때는 (이미지를 만들기만 하고 실행은 x)
+```bash
+# 현재 위치에 Dockerfile이 있는 경우 .
+docker build .
+```
+
+Docker image를 삭제하려면 그전에 해당 이미지로 만든 컨테이너 인스턴스를 모두 삭제해야한다.
+```bash
+# remove docker container
+docker rm <conatiner name>
+```
+
+애플리케이션에 액세스 하려면 로컬포트(3000) 과 내부 도커 컨테이너 노출 포트(80)을 매핑할때
+```bash
+docker run -p 3000:80 <image>
 ```
 
 ## Creating & Managing Containers
