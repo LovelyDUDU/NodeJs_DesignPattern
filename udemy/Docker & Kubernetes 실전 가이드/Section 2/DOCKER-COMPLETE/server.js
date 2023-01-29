@@ -1,9 +1,9 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require("express");
+const bodyParser = require("body-parser");
 
 const app = express();
 
-let userGoal = 'Learn Docker!';
+let userGoal = "Learn Docker!";
 
 app.use(
   bodyParser.urlencoded({
@@ -11,9 +11,9 @@ app.use(
   })
 );
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.get('/', (req, res) => {
+app.get("/", (req, res) => {
   res.send(`
     <html>
       <head>
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
         <section>
-          <h2>My Course Goal</h2>
+          <h2>My Course Goal!</h2>
           <h3>${userGoal}</h3>
         </section>
         <form action="/store-goal" method="POST">
@@ -36,11 +36,11 @@ app.get('/', (req, res) => {
   `);
 });
 
-app.post('/store-goal', (req, res) => {
+app.post("/store-goal", (req, res) => {
   const enteredGoal = req.body.goal;
   console.log(enteredGoal);
   userGoal = enteredGoal;
-  res.redirect('/');
+  res.redirect("/");
 });
 
 app.listen(80);
