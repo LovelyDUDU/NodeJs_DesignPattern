@@ -12,6 +12,6 @@ attached 일때는 컨테이너와 연결된 상태이기 때문에 console.log 
 
 `docker logs` 명령어를 사용하면 컨테이너에 출력된 과거 로그를 가져올 수 있다.
 
-`docker logs` 명령어에 `-f` 옵션을 추가하면 follow 모드로 진입하여 로그정보를 실시간으로 받아볼 수 있게된다.
+`docker logs` 명령어에 `-f` 옵션을 추가하면 follow 모드로 진입하여 로그정보를 실시간으로 받아볼 수 있게된다. `docker logs <container id>`
 
 중지된 컨테이너를 재시작하고 싶다면 `docker start -a <container name>` 를 사용하여 attached 모드로 바로 시작할 수 있다.
