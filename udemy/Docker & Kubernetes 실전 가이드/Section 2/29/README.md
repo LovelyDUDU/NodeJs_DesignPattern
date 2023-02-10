@@ -15,3 +15,27 @@ attached 일때는 컨테이너와 연결된 상태이기 때문에 console.log 
 `docker logs` 명령어에 `-f` 옵션을 추가하면 follow 모드로 진입하여 로그정보를 실시간으로 받아볼 수 있게된다. `docker logs <container id>`
 
 중지된 컨테이너를 재시작하고 싶다면 `docker start -a <container name>` 를 사용하여 attached 모드로 바로 시작할 수 있다.
+
+<br><hr>
+
+## 내용 보충 
+```
+# Create a new container
+docker create
+``` 
+도커 이미지에서 새로운 컨테이너를 생성합니다. 그러나 즉시 실행되지는 않습니다
+
+```
+# Start one or more stopped containers
+docker start
+```
+중지된 컨테이너를 시작합니다. docker create 명령을 사용하여 컨테이너를 만든 경우 이 명령으로 시작할 수 있습니다.
+
+```
+# Run a command in a new container
+docker run
+```
+create와 start의 조합으로 새 컨테이너를 생성하고 시작합니다. docker run 명령은 로컬 시스템에서 이미지를 찾지 못하는 경우 Docker Hub에서 이미지를 가져와서 컨테이너를 생성하고 실행합니다.
+
+
+참고 > https://yooloo.tistory.com/40

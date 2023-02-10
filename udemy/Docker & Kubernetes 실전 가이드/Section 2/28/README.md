@@ -1,6 +1,6 @@
 # 28. 컨테이너 중지 & 재시작
 
-```bash
+```
 user@MacBookPro DOCKER-COMPLETE % docker --help
 
 Usage:  docker [OPTIONS] COMMAND

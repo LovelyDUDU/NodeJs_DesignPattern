@@ -3,7 +3,7 @@
 `docker run <container id>` 로 실행중인 컨테이너와는 상호 작용(interactive)할 수 없다. 
 
 이대로 rnp.py를 도커로 실행시키면 에러가 난다.
-```
+```bash
 user@MacBookPro DOCKER_COMPLETE % docker logs 8f98e9e9ec2c
 Traceback (most recent call last):
   File "/app/rng.py", line 3, in <module>
@@ -21,7 +21,7 @@ interactive 모드에서는 표준 입력을 열린 상태로 유지하며, atta
 
 즉 `-it` 옵션을 사용하면 컨테이너는 입력을 수신하고, 컨테이너에 의해 노출되는 터미널도 생기게 된다.
 
-```
+```bash
 user@MacBookPro DOCKER_COMPLETE % docker run -it sha256:2efbfce0b9405b4b2093114f
 Please enter the min number: 10
 Please enter the max number: 100
@@ -32,6 +32,16 @@ Please enter the max number: 100
 
 또한 사용자 입력을 수신하는 컨테이너 프로세스에도 연결된다.
 
+-> 도커는 간단한 유틸리티 애플리케이션을 도커화하는데에도 사용할 수 있다.
+
 컨테이너가 중지된 후 다시 입력하고 싶을 떄
 
- `docker start` 에 `-a`, `-i` 옵션을 사용하여 출력을 수신할 수 있다. `-t` 옵션이 필요없는 이유는 처음에 `-t` 옵션으로 컨테이너를 실행했기 때문이다. 
+ `docker start` 에 `-a`, `-i` 옵션을 사용하여 출력을 수신할 수 있다. `-t` 옵션이 필요없는 이유는 처음에 `-t` 옵션으로 컨테이너를 실행했어서 `-t` 옵션을 컨테이너가 기억하기 때문이다.
+
+</br><hr>
+
+## 정리
+
+컨테이너를 웹서버나 노드와 같이 실행 프로세스 용도로만 사용할 수 있는 것은 아니다. 필요에 따라 컨테이너와 상호작용할 수도 있다.
+
+
