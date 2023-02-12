@@ -10,3 +10,10 @@
 예를 들어, 모든 이미지 레이어 위에 추가된 새로운 얇은 부가 컨테이너 레이어 내부에 파일을 만든다. 
 
 이미지에 대한 정보를 보려면 `docker image inspect <image id>`  를 사용하면 된다.
+
+## 정리
+이미지 정보 조회
+```bash
+# 이미지 정보 조회
+docker image inspect <image id>
+```

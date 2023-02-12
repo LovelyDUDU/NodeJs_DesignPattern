@@ -15,3 +15,10 @@ user@MacBookPro DOCKER-COMPLETE % docker stop 53a17a0f82b2
 user@MacBookPro DOCKER-COMPLETE % docker ps
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
+
+## 정리
+
+```bash 
+# --rm 옵션을 넣으면 컨테이너가 중지됐을때 바로 삭제된다.
+docker run -p 3000:80 -d --rm d164d5ea2c7c 
+```

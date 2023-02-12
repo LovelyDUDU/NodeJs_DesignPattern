@@ -34,3 +34,18 @@ docker run -p 3000:80 -d --rm --name goalsapp goals:latest
 와 같이 이미지의 이름으로 컨테이너를 실행시킬 수 있다.
 
 태그된 이미지를 포함하여 모든 이미지를 삭제할때는 `docker image prune -a` 명령어를 사용해야 한다.
+
+## 정리
+컨테이너에 이름 붙여줄 때 
+```bash
+# docker run --name <컨테이너 이름> <이미지 id>
+docker run -p 3000:80 -d --rm --name goalsapp d164d5ea2c7c
+```
+
+이미지에 이름 붙여줄 때
+```bash
+# docker build -t <repository>:<태그> .
+docker build -t node:latest .
+
+# docker build -t node:14 .  처럼 버전별로 관리할 때 용이하다.
+```
