@@ -4,9 +4,14 @@
 
 이럴때 바인드 마운트를 읽기 전용(read-only)로 전환하면 된다. (볼륨의 디폴트는 read-write이다.)
 
-ro(read-only)로 볼륨을 만들 때는 내부 경로 뒤에 `:ro` 를 추가하면 된다.
+ro(read-only)로 볼륨을 만들 때는 내부 경로 뒤에 `:ro` 를 추가하면 된다. (컨테이너 내부의 `/app/feedback` 폴더만 쓰기가 가능하다.)
 
-```
+```bash
 docker run -d -p 3000:80 --rm --name feedback-app -v feedback:/app/feedback -v "$(pwd):/app:ro" -v /app/node_modules -v /app/temp feedback-node:volumes
-b9706cb70b795aba73f1431e14e86eb1534988ebccfb21526adcf5a45e5bd05b
+
+
+# -v feedback:/app/feedback -> 명명 볼륨 (컨테이너가 죽어도 남아있는다.)
+# -v "$(pwd):/app:ro"       -> 바인드 마운트 + read-only
+# -v /app/node_modules      -> 익명 볼륨 (컨테이너와 생명주기가 같은 일회용)
+# -v /app/temp              -> 익명 볼륨 (컨테이너와 생명주기가 같은 일회용)
 ```
