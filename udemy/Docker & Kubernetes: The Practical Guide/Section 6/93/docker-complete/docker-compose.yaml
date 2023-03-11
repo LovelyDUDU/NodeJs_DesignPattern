@@ -1,0 +1,25 @@
+# version: 도커 컴포즈 사양의 버전 
+# FYI, https://docs.docker.com/compose/compose-file/compose-file-v3/
+
+# services: 여러 하위 요소(container) 를 가질 수 있다.
+
+version: "3.8"
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    # environment: # case 1 > not use .env, use ": " or "="
+    #   MONGO_INITDB_ROOT_USERNAME: max # case 1-1
+    #   MONGO_INITDB_ROOT_PASSWORD: secret
+      # - MONGO_INITDB_ROOT_USERNAME=max # case 1-2
+      # - MONGO_INITDB_ROOT_PASSWORD=secret
+    env_file: # case 2 > use .env
+      - ./env/mongo.env
+    networks:
+      - goals-net
+  backend:
+
+  frontend:
+volumes:
+  data:

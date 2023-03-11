@@ -1,0 +1,12 @@
+# version: 도커 컴포즈 사양의 버전 
+# FYI, https://docs.docker.com/compose/compose-file/compose-file-v3/
+
+# services: 여러 하위 요소(container) 를 가질 수 있다.
+
+version: "3.8"
+services:
+  mongodb:
+
+  backend:
+
+  frontend:
