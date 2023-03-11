@@ -7,7 +7,7 @@ NodeJS 컨테이너(백엔드 컨테이너)가 작성하는 로그 파일에 데
 
 더 긴 컨테이너 내부 경로가 우선하고, 더 짧은 내부 경로를 덮어쓴다.
 
-`-v /Users/seunghwan/Project/TIL/udemy/Docker & Kubernetes 실전 가이드/Section 5/86/docker-complete/backend:/app`: 바인드 마운트 사용. 로컬 호스팅 디렉토리를 컨테이너 내부의 `/app` 에 바인딩
+`-v $(pwd):/app`: 바인드 마운트 사용. 로컬 호스팅 디렉토리를 컨테이너 내부의 `/app` 에 바인딩
 
 `-v logs:/app/logs`: named volume 사용. `/logs` 폴더와 컨테이너 내부의 `/app/logs` 를 바인딩
 

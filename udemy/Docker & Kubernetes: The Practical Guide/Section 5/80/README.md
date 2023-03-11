@@ -12,4 +12,4 @@
 
 ## Frontend 
 - React SPA
-- Live Source COde Update
+- Live Source Code Update
