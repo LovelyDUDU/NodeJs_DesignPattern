@@ -6,13 +6,13 @@
 # 재빌드
 docker build -t node-dep-example-1 --platform linux/amd64 .
 
-docker tag node-dep-example-1 seunghwankim/node-example-1
+docker tag node-dep-example-1 harrykim/node-example-1
 
-docker push seunghwankim/node-example-1
+docker push harrykim/node-example-1
 ```
 
 ```
-sudo docker run -d --rm -p 80:80 seunghwankim/node-example-1
+sudo docker run -d --rm -p 80:80 harrykim/node-example-1
 ```
 
 근데 실제로 리로드하면 수정전 버전이 화면에 나옴. 왜냐하면 도커가 이미지를 실행할 때마다 그 이미지가 로컬에 있는지 여부를 확인하기 때문.
@@ -20,9 +20,9 @@ sudo docker run -d --rm -p 80:80 seunghwankim/node-example-1
 로컬에 찾고자 하는 이미지가 있으면 그걸 그대로 쓰기 때문에 `docker pull` 로 받아와서 컨테이너 시작해줘야함.
 
 ```
-sudo docker pull seunghwankim/node-example-1
+sudo docker pull harrykim/node-example-1
 
-sudo docker run -d --rm -p 80:80 seunghwankim/node-example-1
+sudo docker run -d --rm -p 80:80 harrykim/node-example-1
 ```
 
 
