@@ -18,4 +18,7 @@ kubectl rollout undo deployment/first-app --to-revision=1
 
 # 서비스 삭제
 kubectl delete service first-app
+
+# deployment 삭제
+kubectl delete service first-app
 ```
