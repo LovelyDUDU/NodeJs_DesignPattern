@@ -4,23 +4,28 @@
 
 이름만 잘 지어도 나중에 문맥을 파악하는데 헤매는 시간을 크게 절약할 수 있다.
 
-## 함수 선언 바꾸기
+## 함수 선언 바꾸기(6.5)
 ### 함수 이름 바꾸기(간단한 절차)
+### before 
 ```javascript
-// before (cirucm = 둘레)
+//(cirucm = 둘레)
 function circum(radis) {
-  return 2 * Math.PI * radius;
-}
-
-// after (circumference = 원의 둘레)
-function circumference(radis) {
   return 2 * Math.PI * radius;
 }
 ```
 
-### 매개변수 추가하기
+### after 
 ```javascript
-// before 
+// (circumference = 원의 둘레)
+function circumference(radis) {
+  return 2 * Math.PI * radius;
+}
+```
+</br>
+
+### 매개변수 추가하기
+### before 
+```javascript
 class Book {
   constructor(){}
 
@@ -28,10 +33,11 @@ class Book {
     this._reservcations.push(customer);
   }
 }
+```
 
-
-
-// after (우선순위 기능이 추가된 경우)
+### after 
+```javascript
+// (우선순위 기능이 추가된 경우)
 class Book {
   constructor(){}
 
@@ -48,18 +54,20 @@ class Book {
 }
 ```
 
+</br>
+
 ### 매개변수를 속성으로 바꾸기
+### before
 ```javascript
-// before
 function inNewEngland(aCustomer) {
   return ["MA", "CT", "ME"].includes(aCustomer.address.state);
 }
 
 const newEnglanders = someCustomers.filter(c => inNewEngland(c));
+```
 
-
-
-// after 
+### after 
+```javascript
 function inNewEngland(stateCode) {
   return ["MA", "CT", "ME"].includes(stateCode);
 }
@@ -68,27 +76,30 @@ function inNewEngland(stateCode) {
 const newEnglanders = someCustomers.filter(c => inNewEngland(c.address.state));
 ```
 
+</br>
 
-## 변수 이름 바꾸기
+## 변수 이름 바꾸기(6.7)
+### before
 ```javascript
-// before
 const a = height * weight;
+```
 
-// after
+### after
+```javascript
 const area = height * weight;
 ```
 
 
-## 필드 이름 바꾸기
+## 필드 이름 바꾸기(9.2)
+### before
 ```javascript
-// before
 class Organization {
   get name() {}
 }
+```
 
-
-
-// after
+### after
+```javascript
 class Organization {
   get title() {}
 }
