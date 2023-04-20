@@ -235,8 +235,82 @@ function regularCharge() {
 
 ## 조건부 로직을 다형성으로 바꾸기(10.4)
 
+복잡한 조건부 로직은 프로그래밍에서 해석하기 가장 난해한 대상에 속한다. 조건부 구조는 클래스와 다형성을 이용하여 더 확실하고 직관적인 분리가 가능하다. 
+
+### before
+```javascript
+switch (bird.type) {
+  case "유럽 제비":
+    return "보통이다.";
+  case "아프리카 제비":
+    return (bird.numberOfCoconuts > 2) ? "지쳤다" : "보통이다.";
+  case "노르웨이 파랑 앵무":
+    return (bird.voltage > 100) ? "그을렸다" : "예쁘다.";
+  default:
+    return "알 수 없다.";
+}
+```
+
+### after
+```javascript
+class EuropeanSwallow {
+  get plumage() {
+    return "보통이다."; 
+  }
+
+  // ...
+}
+class AfricanSwallow {
+  get plumage() {
+    return (bird.numberOfCoconuts > 2) ? "지쳤다" : "보통이다.";
+  }
+  
+  // ...
+}
+
+class NorwegianBlueParrot {
+  get plumage() {
+    return (bird.voltage > 100) ? "그을렸다" : "예쁘다.";
+  }
+
+  // ...
+}
+```
+
 
 
 </br>
 
 ## 반복문 쪼개기(8.7)
+반복문 하나에서 두 가지 이상의 일을 수행하는 경우 반복문을 각각 쪼개주자. 
+
+여러 일을 한꺼번에 처리할 수 있다는 장점이 있지만, 반복문을 수정할 때마다 두 가지 일 모두 잘 이해하고 진행해야 한다는 단점이 있다.
+
+물론 반복문 한번돌면 될 일을 두번 돌아서 불편해할 수도 있긴 하다. 이 부분은 반복문을 두번 실행하는게 병목이라고 밝혀졌을 떄 다시 합치면 되는 일이다. (다시 하나로 합치는 일은 쉽다.)
+
+리팩토링과 최적화를 구분하자. 최적화는 코드를 깔끔히 정리한 이후에 수행하면 된다.
+### before
+```javascript
+let averageAge = 0;
+let totalSalary = 0;
+for (const p of people) {
+  averageAge += p.age;
+  totalSalary += p.salary;
+}
+averageAge = averageAge / people.length;
+```
+
+### after
+```javascript
+let totalSalary = 0;
+for (const p of people) {
+  totalSalary += p.salary;
+}
+let averageAge = 0;
+for (const p of people) {
+  averageAge += p.age;
+}
+averageAge = averageAge / people.length;
+
+// 여기서 추가적으로 함수 나누기 리팩토링도 해줄 수 있다. 
+```
