@@ -98,7 +98,7 @@ const alerts = readingsOutsideRange(station, operationPlan.temperatureFloor, ope
 ### after
 
 ```javascript
-// station 이라는 매개변수를 하나의 객체로 만들었다.
+// station 이라는 매개변수와 그와 관련된 기능을 하나의 객체로 만들었다.
 class NumberRange {
   constructor(min, max) {
     this._data = {min: min, max: max};
