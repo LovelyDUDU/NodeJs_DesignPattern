@@ -1,5 +1,5 @@
 # 215. 볼륨에서 영구(Persistent) 볼륨으로
-pod 이 제거되거나 교체되었을때, 혹은 auto scaling 으로 추가되었을떄 데이터를 공유하지 못하는 경우는 hostPath로 해결할 수 있다.
+pod 이 제거되거나 교체되었을때, 혹은 auto scaling 으로 추가되었을때 데이터를 공유하지 못하는 경우는 hostPath로 해결할 수 있다.
 
 근데 hostPath는 단일 노드 환경(e.g. minikube)에서만 사용할 수 있다는 단점이 있다.
 

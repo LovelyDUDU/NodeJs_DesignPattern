@@ -21,7 +21,7 @@ docker stop mycontainer
 
 A2. 
 ```bash
-# --rm 옵션떄문에 컨테이너가 중지되녀 자동으로 제거되기 때문
+# --rm 옵션때문에 컨테이너가 중지되녀 자동으로 제거되기 때문
 docker rm mycontainer
 ```
 

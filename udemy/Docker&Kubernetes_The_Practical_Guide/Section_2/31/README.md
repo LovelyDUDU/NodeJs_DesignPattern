@@ -13,7 +13,7 @@ EOFError: EOF when reading a line
 Please enter the min number
 ```
 
-이떄 `-i` 명령어 옵션을 추가하면 interactive 모드로 컨테이너를 시작할 수 있다. 
+이때 `-i` 명령어 옵션을 추가하면 interactive 모드로 컨테이너를 시작할 수 있다. 
 
 interactive 모드에서는 표준 입력을 열린 상태로 유지하며, attached 모드가 아닌 경우에도 컨테이너에 무언가 입력할 수 있다.
 
@@ -34,7 +34,7 @@ Please enter the max number: 100
 
 -> 도커는 간단한 유틸리티 애플리케이션을 도커화하는데에도 사용할 수 있다.
 
-컨테이너가 중지된 후 다시 입력하고 싶을 떄
+컨테이너가 중지된 후 다시 입력하고 싶을 때
 
  `docker start` 에 `-a`, `-i` 옵션을 사용하여 출력을 수신할 수 있다. `-t` 옵션이 필요없는 이유는 처음에 `-t` 옵션으로 컨테이너를 실행했어서 `-t` 옵션을 컨테이너가 기억하기 때문이다.
 

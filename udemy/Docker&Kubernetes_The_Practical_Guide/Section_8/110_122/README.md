@@ -35,11 +35,11 @@ services:
     # image: 'php:8.0-fpm-alpine'
     build:
       context: . # dockerfile을 찾을 수 있는 폴더 설정
-      dockerfile: dockerfiles/php.dockerfile # 커스텀 Dockerfile 사용 -> 필요한 것을 갖춘 공식 이미지가 없기 떄문
+      dockerfile: dockerfiles/php.dockerfile # 커스텀 Dockerfile 사용 -> 필요한 것을 갖춘 공식 이미지가 없기 때문
     volumes:
       - ./src:/var/www/html:delegated # 소스코드는 컨테이너 내부 폴더에서 사용할 수 있어야 하기 때문에 bind mount
       # delegated: 컨테이너가 일부 데이터를 기록해야하는 경우에 결과를 host 에 즉시 반영하지 않고 batch로 기본처리함으로써 성능이 향상됨 (최적화하는 대신 안정성이 떨어짐)
-    # 포트는 nginx.conf 에 9000으로 정의되어 있다. php 컨테이너와 nginx 컨테이너가 통신하기 떄문에 별도의 포트 설정이 없다.
+    # 포트는 nginx.conf 에 9000으로 정의되어 있다. php 컨테이너와 nginx 컨테이너가 통신하기 때문에 별도의 포트 설정이 없다.
     # 호스트 머신에서 php 컨테이너와 상호작용하려는 경우에는 3000:9000 으로 매핑하면되는데 지금은 다른 컨테이너 간의 통신이라 매핑이 필요없다.
   mysql: # DB
     image: mysql:5.7

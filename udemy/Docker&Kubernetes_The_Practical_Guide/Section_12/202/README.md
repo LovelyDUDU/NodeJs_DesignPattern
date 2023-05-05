@@ -8,6 +8,6 @@ livenessProbe:
     path: /
     port: 8080
   periodSeconds: 10 # 작업 수행 빈도
-  initialDeplaySeconds: 5 # 쿠버네티스가 처음으로 상태를 확인할 떄 까지 기다려야 하는 시간
+  initialDeplaySeconds: 5 # 쿠버네티스가 처음으로 상태를 확인할 때 까지 기다려야 하는 시간
 ...
 ```
