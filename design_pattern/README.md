@@ -2,7 +2,7 @@
 
 ## GoF 디자인 패턴
 
-### 생성
+### Creation Pattern (생성패턴)
 1. 싱글턴 패턴
 2. 빌더 패턴
 3. 팩토리 패턴
@@ -10,7 +10,7 @@
 5. 추상 팩토리
 
 
-### Structural Pattern
+### Structural Pattern (구조 패턴)
 1. 어댑터 패턴
 2. 브릿지 패턴
 3. 컴포지트 패턴
@@ -19,7 +19,7 @@
 6.  플라이웨이트 패턴
 7.  프록시 패턴
 
-### Behavioral Pattern
+### Behavioral Pattern (행위 패턴)
 1. 책임 연쇄
 2. 커맨드 패턴
 3. 인터프리터
@@ -31,8 +31,9 @@
 9.  전략 패턴
 10. 템플릿 메소드 패턴
 11. 반복자 패턴
-12. 
-13. 복합 패턴(MVC)
+
+### 복합 패턴
+1. MVC 패턴
 
 ## 디자인 원칙
 1. 캡슐화 원칙
@@ -50,3 +51,5 @@
 https://www.devkuma.com/docs/design-pattern/
 
 https://gmlwjd9405.github.io/2017/10/01/basic-concepts-of-development-designpattern.html
+
+https://inpa.tistory.com/category/%EB%94%94%EC%9E%90%EC%9D%B8%20%ED%8C%A8%ED%84%B4
