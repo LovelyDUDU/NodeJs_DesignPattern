@@ -46,6 +46,13 @@
 8. 의존성 뒤집기 원칙
 9. 할리우드 원칙
 
+## 객체지향 원칙 (SOLID)
+1. 단일 책임 원칙(Single responsibility principle): SRP
+2. 개방 폐쇄 원칙(Open/closed principle) : OCP
+3. 리스코프 치환 원칙(Liskov substitution principle) : LSP
+4. 인터페이스 분리 원칙(Interface segregation principle) : ISP
+5. 의존관계 역전 원칙(Dependency inversion principle) : DIP
+
 
 ## 참고 자료
 https://www.devkuma.com/docs/design-pattern/
