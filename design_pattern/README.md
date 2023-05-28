@@ -37,7 +37,7 @@
 
 ## 디자인 원칙
 1. 캡슐화 원칙
-2. 구성 우선 원칙
+2. 구성 우선 원칙 (Composition Over Inheritance)
 3. OCP
 4. 최소 지식 원칙
 5. 단일 역할 원칙
