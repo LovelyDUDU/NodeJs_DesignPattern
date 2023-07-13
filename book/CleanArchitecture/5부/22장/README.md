@@ -3,7 +3,7 @@
 
 소프트웨어를 계층으로 분리함으로써 관심사의 분리라는 목표를 달성해야 한다.
 
-![clean architecture](./clean_architecture.png)
+![clean architecture](~/../../../image/clean_architecture.png)
 
 안으로 들어갈수록 고수준의 소프트웨어이다. 
 
